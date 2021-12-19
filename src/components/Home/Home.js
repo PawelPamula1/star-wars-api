@@ -15,7 +15,6 @@ const Home = () => {
   const data = useSelector(getData);
   return (
     <div className="home">
-      <Pagination data={data} />
       <div className="content">
         <CharacterListing />
       </div>

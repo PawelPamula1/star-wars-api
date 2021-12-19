@@ -1,13 +1,14 @@
 import React from 'react';
-import { getAllCharacters, getData } from '../../features/characters/charactersSlice';
+import { getAllCharacters } from '../../features/characters/charactersSlice';
 import { useSelector } from 'react-redux';
 import { CharacterCard } from '..';
+import './CharacterListing.scss';
 
 const CharacterListing = () => {
   const people = useSelector(getAllCharacters);
   console.log(people, 'people');
   return (
-    <div>
+    <div className="listing">
       {people?.map((person, idx) => (
         <CharacterCard name={person.name} index={idx} />
       ))}
