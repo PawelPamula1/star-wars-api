@@ -4,9 +4,8 @@ import { fetchAsyncCharacters } from '../../features/characters/charactersSlice'
 import './Pagination.scss';
 
 const Pagination = ({ data }) => {
-  // const numOfPages = Math.ceil(data.count / 10);
+  const numOfPages = Math.ceil(data.count / 10);
   const [currentPage, setCurrentPage] = useState(1);
-  const numOfPages = 4;
   const dispatch = useDispatch();
 
   const nextPage = (currentPage) => {

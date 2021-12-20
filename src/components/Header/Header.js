@@ -10,13 +10,17 @@ const Header = () => {
       </Link>
 
       <div className="categories">
-        <div className="all">
-          <i className="fa fa-global"></i>
-          <p>All Characters</p>
-        </div>
-        <div className="favourites">
-          <i className="fa fa-star"></i> <p>Your favourite ones</p>
-        </div>
+        <Link to="/">
+          <div className="all">
+            <p>All Characters</p>
+          </div>
+        </Link>
+
+        <Link to="/favourites">
+          <div className="favourites">
+            <p>Your favourite ones</p>
+          </div>
+        </Link>
       </div>
     </header>
   );

@@ -8,9 +8,8 @@ const CharacterDetail = () => {
 
   return (
     <div className="container">
-      <div className="title">Character Details</div>
-      <div className="caption">Name</div>
-      <div className="name item">{person.name}</div>
+      <div className="title">{person.name}</div>
+
       <div className="caption">Height</div>
 
       <div className="height item">{person.height}</div>

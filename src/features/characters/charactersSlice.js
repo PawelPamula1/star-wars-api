@@ -63,8 +63,9 @@ export const counterSlice = createSlice({
 });
 
 export const getAllCharacters = (state) => state.characters.characters;
-export const getData = (state) => state;
+export const getData = (state) => state.characters.data;
 export const getFavouriteCharacters = (state) => state.favouriteCharacters;
 export const getSelectedCharacter = (state) => state.characters.selectCharacter;
 export const getLoadingStatus = (state) => state.isLoading;
+
 export default counterSlice.reducer;

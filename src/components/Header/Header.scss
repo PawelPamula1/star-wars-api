@@ -16,31 +16,6 @@ header {
         text-align: center;
     }
 
-    form {
-        display: flex;
-        justify-content: center;
-        box-shadow: 8px 5px 18px -7px rgba(0, 0, 0, 1);
-
-        input {
-            padding: 2rem;
-            outline: none;
-            border: none;
-            height: 5rem;
-            font-size: 2rem;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-
-        }
-
-        button {
-            height: 5rem;
-            border: none;
-            padding: 2rem;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-    }
-
     .favourites, .all {
         margin: 2rem 0 0 0;
         padding: .5rem 2rem;
@@ -57,9 +32,13 @@ header {
             box-shadow: 8px 5px 23px 3px rgba(0, 0, 0, 1);
         }
 
-        i {
-            color: $font-secondary;
-        }
+    }
+
+    .categories {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
     }
 
 }
