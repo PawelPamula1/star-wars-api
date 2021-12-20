@@ -1,6 +1,6 @@
 import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { CharacterDetail, FavouriteCharactersListing, Footer, Header, Home, PageNotFound } from './components/index';
+import { CharacterDetail, FavouriteCharactersListing, Header, Home, PageNotFound } from './components/index';
 
 function App() {
   return (
@@ -9,13 +9,12 @@ function App() {
         <Header />
         <div className="container">
           <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/character/:id" component={CharacterDetail} />
+            <Route exact path="/" component={Home} />
+            <Route path="/character" component={CharacterDetail} />
             <Route path="/favourites" component={FavouriteCharactersListing} />
             <Route component={PageNotFound} />
           </Switch>
         </div>
-        <Footer />
       </Router>
     </div>
   );

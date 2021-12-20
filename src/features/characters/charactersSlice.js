@@ -9,6 +9,13 @@ export const fetchAsyncCharacters = createAsyncThunk('characters/fetchAsyncChara
   return response.data;
 });
 
+export const fetchAsyncCharactersByName = createAsyncThunk('characters/fetchAsyncCharactersByName', async (url) => {
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+  return data;
+});
+
 export const fetchAsyncSearchedCharacters = createAsyncThunk('characters/fetchAsyncCharacters', async (term) => {
   const response = await characterApi.get(`/people/?search=${term}`).catch((err) => {
     console.log('Err :', err);
@@ -21,24 +28,36 @@ export const counterSlice = createSlice({
   name: 'characters',
   initialState: {
     data: {},
-    characters: {},
+    characters: null,
     favouriteCharacters: [],
     selectCharacter: {},
+    isLoading: true,
   },
   extraReducers: {
     [fetchAsyncCharacters.pending]: (state, action) => {
       console.log('characters pending');
+      return { ...state, isLoading: true };
     },
     [fetchAsyncCharacters.fulfilled]: (state, { payload }) => {
       console.log('characters fetched succesfully');
-      return { ...state, characters: payload };
+      return { ...state, characters: payload.results, data: payload, isLoading: false };
     },
-    [fetchAsyncCharacters.fulfilled]: (state, { payload }) => {
-      console.log('characters fetched succesfully');
-      return { ...state, characters: payload.results, data: payload };
-    },
-    [fetchAsyncCharacters.rejected]: () => {
+    [fetchAsyncCharacters.rejected]: (state) => {
       console.log('characters rejected');
+      return { ...state, isLoading: false };
+    },
+
+    [fetchAsyncCharactersByName.pending]: (state, action) => {
+      console.log('characters pending');
+      return { ...state, isLoading: true };
+    },
+    [fetchAsyncCharactersByName.fulfilled]: (state, { payload }) => {
+      console.log('characters fetched succesfully');
+      return { ...state, selectCharacter: payload };
+    },
+    [fetchAsyncCharactersByName.rejected]: (state) => {
+      console.log('characters rejected');
+      return { ...state, isLoading: false };
     },
   },
 });
@@ -46,5 +65,6 @@ export const counterSlice = createSlice({
 export const getAllCharacters = (state) => state.characters.characters;
 export const getData = (state) => state;
 export const getFavouriteCharacters = (state) => state.favouriteCharacters;
-export const getSelectedCharacter = (state) => state.selectCharacter;
+export const getSelectedCharacter = (state) => state.characters.selectCharacter;
+export const getLoadingStatus = (state) => state.isLoading;
 export default counterSlice.reducer;

@@ -5,3 +5,29 @@
     flex-direction: column;
     gap: 2rem;
 }
+
+form {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+
+    input {
+        padding: 2rem;
+        outline: none;
+        border: none;
+        height: 5rem;
+        font-size: 2rem;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+
+    }
+
+    button {
+        height: 5rem;
+        border: none;
+        padding: 2rem;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+}
