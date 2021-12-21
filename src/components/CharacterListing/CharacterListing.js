@@ -1,11 +1,22 @@
-import React from 'react';
-import { getAllCharacters, getLoadingStatus } from '../../features/characters/charactersSlice';
+import React, { useRef } from 'react';
+import { fetchAsyncSearchedCharacters, getAllCharacters, getLoadingStatus } from '../../features/characters/charactersSlice';
 import { useSelector } from 'react-redux';
 import { CharacterCard } from '..';
 import './CharacterListing.scss';
+import { useDispatch } from 'react-redux';
 
 const CharacterListing = () => {
   const people = useSelector(getAllCharacters);
+  const searchTerm = useRef('');
+  const dispatch = useDispatch();
+
+  const searchByTerm = (e) => {
+    e.preventDefault();
+    console.log(searchTerm.current.value);
+    console.log('kurwa');
+    dispatch(fetchAsyncSearchedCharacters(searchTerm.current.value));
+  };
+
   let renderPeople = '';
   renderPeople =
     people !== null ? (
@@ -22,8 +33,8 @@ const CharacterListing = () => {
   return (
     <>
       <form>
-        <input type="text" placeholder="Search for character" />
-        <button>
+        <input ref={searchTerm} type="text" placeholder="Search for character" />
+        <button onClick={searchByTerm}>
           <i className="fa fa-search"></i>
         </button>
       </form>

@@ -39,7 +39,7 @@ export const characterSlice = createSlice({
     },
   },
   extraReducers: {
-    [fetchAsyncCharacters.pending]: (state, action) => {
+    [fetchAsyncCharacters.pending]: (state) => {
       console.log('characters pending');
       return { ...state, isLoading: true };
     },
@@ -52,7 +52,20 @@ export const characterSlice = createSlice({
       return { ...state, isLoading: false };
     },
 
-    [fetchAsyncCharactersByName.pending]: (state, action) => {
+    [fetchAsyncSearchedCharacters.pending]: (state) => {
+      console.log('characters pending');
+      return { ...state, isLoading: true };
+    },
+    [fetchAsyncSearchedCharacters.fulfilled]: (state, { payload }) => {
+      console.log('characters fetched succesfully');
+      return { ...state, characters: payload.results, data: payload, isLoading: false };
+    },
+    [fetchAsyncSearchedCharacters.rejected]: (state) => {
+      console.log('characters rejected');
+      return { ...state, isLoading: false };
+    },
+
+    [fetchAsyncCharactersByName.pending]: (state) => {
       console.log('characters pending');
       return { ...state, isLoading: true };
     },
