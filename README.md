@@ -8,4 +8,4 @@ You can check this project live here: https://star-wars-api-pp.netlify.app/
 
 ### Techs
 
-ReactJS, Redux Toolkit, SCSS
+ReactJS, Redux Toolkit, REST API, SCSS
