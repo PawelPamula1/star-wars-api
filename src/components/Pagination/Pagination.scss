@@ -1,25 +1,29 @@
 @import '../../common/global.scss';
 
 .pagination {
-    padding: 1rem;
-    margin: 2rem 0;
-    font-size: 1.5rem;
-    color: $font-primary;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $primary-color;
-    border-radius: 5px;
-    border: 1px solid $font-primary;
-    min-width: 20rem;
+    gap: 3rem;
 
-    .previous, .page, .next {
+    .previous, .current, .next {
+        font-size: 2rem;
         padding: 1rem;
+        color: $font-primary;
+        background-color: $primary-color;
+        width: 7rem;
+        text-align: center;
+        border-bottom: 1px solid $font-primary;
+    }
+
+    .previous, .next {
         cursor: pointer;
     }
 
-    .picked {
-        background-color: $secondary-color;
-        border-radius: 5px;
+    .disabled {
+        color: transparent;
+        cursor: default;
+        border-bottom: transparent;
     }
+
 }

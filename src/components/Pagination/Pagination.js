@@ -20,14 +20,22 @@ const Pagination = ({ data }) => {
 
   return (
     <div className="pagination">
-      {currentPage !== 1 && (
+      {currentPage !== 1 ? (
         <div className="previous" onClick={() => previousPage(currentPage)}>
           <i className="fa fa-arrow-left"></i>
         </div>
+      ) : (
+        <div className="previous disabled">
+          <i className="fa fa-arrow-left"></i>
+        </div>
       )}
-      {currentPage}
-      {currentPage !== numOfPages && (
+      <div className="current">{currentPage}</div>
+      {currentPage !== numOfPages ? (
         <div className="next" onClick={() => nextPage(currentPage)}>
+          <i className="fa fa-arrow-right"></i>
+        </div>
+      ) : (
+        <div className="next disabled">
           <i className="fa fa-arrow-right"></i>
         </div>
       )}

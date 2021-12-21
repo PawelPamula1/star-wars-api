@@ -8,6 +8,7 @@
     background-color: $primary-color;
     border-bottom: 1px solid $font-primary;
     cursor: pointer;
+    transition: all .2s ease-in;
 
     &:hover {
         border-bottom: 1px solid transparent;
