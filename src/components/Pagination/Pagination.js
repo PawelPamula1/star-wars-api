@@ -29,7 +29,7 @@ const Pagination = ({ data }) => {
           <i className="fa fa-arrow-left"></i>
         </div>
       )}
-      <div className="current">{currentPage}</div>
+      {numOfPages !== 1 ? <div className="current">{currentPage}</div> : <div className="current disabled">{currentPage}</div>}
       {currentPage !== numOfPages ? (
         <div className="next" onClick={() => nextPage(currentPage)}>
           <i className="fa fa-arrow-right"></i>
