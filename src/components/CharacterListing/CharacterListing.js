@@ -12,8 +12,6 @@ const CharacterListing = () => {
 
   const searchByTerm = (e) => {
     e.preventDefault();
-    console.log(searchTerm.current.value);
-    console.log('kurwa');
     dispatch(fetchAsyncSearchedCharacters(searchTerm.current.value));
   };
 

@@ -16,7 +16,7 @@ const FavouriteCharactersListing = () => {
           </div>
         ))
       ) : (
-        <p>Start adding your favourites</p>
+        <p className="none">Start adding your favourites characters</p>
       )}
     </div>
   );
