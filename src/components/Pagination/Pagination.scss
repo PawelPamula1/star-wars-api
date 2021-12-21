@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    margin: 2rem 0;
 
     .previous, .current, .next {
         font-size: 2rem;
@@ -22,6 +23,7 @@
 
     .disabled {
         color: transparent;
+        background: transparent;
         cursor: default;
         border-bottom: transparent;
     }

@@ -2,24 +2,25 @@
 
 .card {
     color: $font-primary;
-    padding: 1rem;
-    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    font-size: 2.2rem;
     min-width: 40rem;
     background-color: $primary-color;
     border-bottom: 1px solid $font-primary;
     transition: all .2s ease-in;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    
     .show-details, .add-to-favourites {
         font-size: 1.2rem;
         padding: .3rem 1rem;
         margin: 1rem 0;
         background-color: $font-primary;
         color: $primary-color;
-    cursor: pointer;
+        cursor: pointer;
+        text-align: center;
 
         &:hover {
             opacity: 0.5;
