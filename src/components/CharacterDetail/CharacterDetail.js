@@ -7,6 +7,7 @@ import './CharacterDetail.scss';
 const CharacterDetail = () => {
   const person = useSelector(getSelectedCharacter);
   const dispatch = useDispatch();
+  console.log(person, 'person');
 
   return (
     <div className="container">

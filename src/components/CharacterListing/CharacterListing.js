@@ -19,7 +19,7 @@ const CharacterListing = () => {
   renderPeople =
     people !== null ? (
       people.map((person, idx) => {
-        return <CharacterCard name={person.name} key={idx} url={person.url} />;
+        return <CharacterCard person={person} name={person.name} key={idx} url={person.url} />;
       })
     ) : (
       <div className="error">
