@@ -26,7 +26,7 @@ const CharacterDetail = () => {
 
       <div className="skin-color item">{person.skin_color}</div>
       <div className="add-to-fav" onClick={() => dispatch(addToFav(person))}>
-        Dodaj do ulubionych
+        Add to favourites
       </div>
     </div>
   );
