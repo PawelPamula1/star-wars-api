@@ -27,3 +27,18 @@
     font-size: 1.6rem;
     padding: 2rem 0 0 0;
 }
+
+.add-to-fav {
+    margin-top: 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: $primary-color;
+    background-color: $font-primary;
+    border: 1px solid $primary-color;
+    padding: 1rem 5rem;
+    transition: opacity .1s ease-in;
+
+    &:hover {
+        opacity: .5;
+    }
+}

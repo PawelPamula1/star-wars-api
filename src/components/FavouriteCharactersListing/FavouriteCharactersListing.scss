@@ -1,0 +1,26 @@
+@import '../../common/global.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    .favourite-item {
+        color: $font-primary;
+        padding: 1rem;
+        font-size: 1.8rem;
+        min-width: 40rem;
+        background-color: $primary-color;
+        border-bottom: 1px solid $font-primary;
+        cursor: pointer;
+        &:hover {
+            border-bottom: 1px solid transparent;
+            opacity: 0.5;
+        }
+    }
+    
+}
+
+

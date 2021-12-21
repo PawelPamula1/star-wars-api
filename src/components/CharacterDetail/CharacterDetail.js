@@ -1,10 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { getSelectedCharacter } from '../../features/characters/charactersSlice';
+import { addToFav, getSelectedCharacter } from '../../features/characters/charactersSlice';
 import './CharacterDetail.scss';
 
 const CharacterDetail = () => {
   const person = useSelector(getSelectedCharacter);
+  const dispatch = useDispatch();
 
   return (
     <div className="container">
@@ -22,6 +24,9 @@ const CharacterDetail = () => {
       <div className="caption">Skin Color</div>
 
       <div className="skin-color item">{person.skin_color}</div>
+      <div className="add-to-fav" onClick={() => dispatch(addToFav(person))}>
+        Dodaj do ulubionych
+      </div>
     </div>
   );
 };

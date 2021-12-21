@@ -24,7 +24,7 @@ export const fetchAsyncSearchedCharacters = createAsyncThunk('characters/fetchAs
   return response.data;
 });
 
-export const counterSlice = createSlice({
+export const characterSlice = createSlice({
   name: 'characters',
   initialState: {
     data: {},
@@ -32,6 +32,11 @@ export const counterSlice = createSlice({
     favouriteCharacters: [],
     selectCharacter: {},
     isLoading: true,
+  },
+  reducers: {
+    addToFav: (state, action) => {
+      state.favouriteCharacters.push(action.payload);
+    },
   },
   extraReducers: {
     [fetchAsyncCharacters.pending]: (state, action) => {
@@ -62,10 +67,11 @@ export const counterSlice = createSlice({
   },
 });
 
+export const { addToFav } = characterSlice.actions;
 export const getAllCharacters = (state) => state.characters.characters;
 export const getData = (state) => state.characters.data;
-export const getFavouriteCharacters = (state) => state.favouriteCharacters;
+export const getFavouriteCharacters = (state) => state.characters.favouriteCharacters;
 export const getSelectedCharacter = (state) => state.characters.selectCharacter;
 export const getLoadingStatus = (state) => state.isLoading;
 
-export default counterSlice.reducer;
+export default characterSlice.reducer;
